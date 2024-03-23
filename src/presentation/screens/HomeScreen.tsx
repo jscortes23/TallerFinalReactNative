@@ -1,32 +1,28 @@
 import { FlatList, Image, SafeAreaView, StyleSheet, Text, View } from "react-native"
 import StyledText from "../../components/StyledText"
-import products from "../../data/products"
-import ItemProduct from "../../components/ItemProdcut"
+import { colors } from "../../config/themes/appThemes"
+import ListProdcut from "../../components/ListProducts"
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 8,
+    backgroundColor: colors.creamPink,
+  },
+  header: {
+    marginBottom: 16,
+  }
+})
 
 const HomeScreen = () => {
   return (
-    <View>
-      <View>
-        <Image />
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <StyledText lgX4 semiBold tertiary centeredText>
+          Taller Final
+        </StyledText>
       </View>
-      <StyledText lgX4 semiBold tertiary>
-        Taller Final
-      </StyledText>
-      <SafeAreaView >
-        <FlatList
-          data={products}
-          ItemSeparatorComponent={() => <Text />}
-          renderItem={({ item: { id, nombre, cantidad } }) => {
-            return (
-              <ItemProduct
-                id={id}
-                cantidad={cantidad}
-                nombre={nombre}
-              />
-            )
-          }}
-        />
-      </SafeAreaView>
+      <ListProdcut />
     </View>
   )
 }

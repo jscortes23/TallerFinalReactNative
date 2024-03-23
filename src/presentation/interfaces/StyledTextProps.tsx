@@ -20,6 +20,7 @@ export interface StyledTextProps {
   lightBlue?: boolean
   lightYellow?: boolean
   lightGrey?: boolean
+  centeredText?: boolean
   style?: {}
   restOfProps?: any
 }

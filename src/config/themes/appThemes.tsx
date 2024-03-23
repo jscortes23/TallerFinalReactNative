@@ -6,10 +6,17 @@ export const colors = {
   tertiary: '#3D405B',
   white: '#FFFFFF',
   lightPink: '#F5CAC3',
+  creamPink: '#f7f3e7',
   lightBlue: '#A9D7DA',
   lightYellow: '#FFEF92',
   lightGrey: '#B6D7CF',
 }
+
+export const center = StyleSheet.create({
+  text: {
+    textAlign: 'center'
+  }
+})
 
 export const colorBasic = StyleSheet.create({
   primary: {
@@ -85,4 +92,35 @@ export const fontWeight = StyleSheet.create({
   semiBold: {
     fontWeight: '600'
   },
+})
+
+export const product = StyleSheet.create({
+  container: {
+    backgroundColor: colors.white,
+    color: colors.secondary,
+    flexDirection: 'row',
+    columnGap: 20,
+    borderRadius: 10,
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+    marginHorizontal: 16,
+    shadowColor: 'black',
+    shadowOffset: {
+      width: 0,
+      height: 4
+    },
+    shadowRadius: 8,
+    elevation: 3
+  },
+  content: {
+    flex: 1,
+    rowGap: 4,
+  },
+  button: {
+    backgroundColor: colors.primary,
+    borderRadius: 20,
+    paddingHorizontal: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 })
