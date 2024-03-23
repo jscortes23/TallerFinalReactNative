@@ -1,4 +1,4 @@
-import { FlatList, Image, SafeAreaView, StyleSheet, Text, View } from "react-native"
+import { StyleSheet, View } from "react-native"
 import StyledText from "../../components/StyledText"
 import { colors } from "../../config/themes/appThemes"
 import ListProdcut from "../../components/ListProducts"

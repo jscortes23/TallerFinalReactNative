@@ -4,4 +4,5 @@ export interface IProducts {
   nombre: string
   cantidad: number
   persona?: string
+  children?: React.ReactNode
 }

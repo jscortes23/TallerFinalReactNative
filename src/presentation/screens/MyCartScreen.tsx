@@ -17,11 +17,7 @@ const styles = StyleSheet.create({
 })
 
 const MyCartScreen = () => {
-  const productWithPerson = () => {
-    return (
-      products.filter((product) => product.persona !== '')
-    )
-  }
+  const productWithPerson = products.filter((product) => product.persona !== '')
 
   return (
     <View style={styles.container}>
@@ -30,15 +26,16 @@ const MyCartScreen = () => {
       <SafeAreaView>
         <ScrollView>
           {
-            productWithPerson().map((ob) => {
+            productWithPerson.map((ob) => {
               return (
                 <View style={{ marginVertical: 8 }}>
                   <ItemProduct
                     id={ob.id}
                     nombre={ob.nombre}
-                    persona={ob.persona}
                     cantidad={ob.cantidad}
-                  />
+                  >
+                    <StyledText lg >Solicitado por: {ob.persona}</StyledText>
+                  </ItemProduct>
                 </View>
               )
             })
