@@ -116,11 +116,85 @@ export const product = StyleSheet.create({
     flex: 1,
     rowGap: 4,
   },
-  button: {
+})
+
+export const button = StyleSheet.create({
+  primary: {
     backgroundColor: colors.primary,
     borderRadius: 20,
+    paddingVertical: 8,
     paddingHorizontal: 16,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  more: {
+    backgroundColor: colors.white,
+    borderRadius: 99999,
+    paddingHorizontal: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: colors.lightPink,
+  },
+  less: {
+    backgroundColor: colors.primary,
+    borderRadius: 999999,
+    paddingHorizontal: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: colors.white
+  }
+})
+
+export const modal = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalView: {
+    width: '80%',
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 30,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  content: {
+    rowGap: 18,
+    marginBottom: 40,
+    textAlign: 'center',
+  },
+  input: {
+    padding: 8,
+    borderRadius: 8,
+    borderColor: colors.lightPink,
+    borderWidth: 1,
+  },
+  count: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    width: '100%',
+    columnGap: 20,
+  },
+});
+
+export const home = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 8,
+    backgroundColor: colors.creamPink,
+  },
+  header: {
+    marginBottom: 16,
   }
 })

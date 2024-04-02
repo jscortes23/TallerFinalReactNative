@@ -1,8 +1,10 @@
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native"
+import { Modal, Pressable, SafeAreaView, ScrollView, StyleSheet, TextInput, View } from "react-native"
 import StyledText from "../../components/StyledText"
 import { colors } from "../../config/themes/appThemes"
 import products from "../../data/products"
 import ItemProduct from "../../components/ItemProdcut"
+import { useEffect, useState } from "react"
+import { IProducts } from "../interfaces/IProducts"
 
 const styles = StyleSheet.create({
   container: {
@@ -17,18 +19,21 @@ const styles = StyleSheet.create({
 })
 
 const MyCartScreen = () => {
-  const productWithPerson = products.filter((product) => product.persona !== '')
+
+  const [productWithPerson, setProductWithPerson] = useState<IProducts[]>([])
+  useEffect(() => {
+    setProductWithPerson(products.filter((product) => product.persona !== ''))
+  }, [])
 
   return (
     <View style={styles.container}>
       <StyledText lgX4 semiBold tertiary centeredText>Equipos equipos solicitados</StyledText>
-
       <SafeAreaView>
         <ScrollView>
           {
             productWithPerson.map((ob) => {
               return (
-                <View style={{ marginVertical: 8 }}>
+                <View key={ob.id} style={{ marginVertical: 8 }}>
                   <ItemProduct
                     id={ob.id}
                     nombre={ob.nombre}
@@ -42,7 +47,6 @@ const MyCartScreen = () => {
           }
         </ScrollView>
       </SafeAreaView>
-
     </View>
   )
 }
